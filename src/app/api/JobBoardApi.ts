@@ -1,4 +1,5 @@
 import { api } from "@/lib/utils";
+import { JobPayload } from "../job-board/types/JobDetails";
 
 export const getJoblistAPI = async (data: object) => {
   try {
@@ -9,9 +10,9 @@ export const getJoblistAPI = async (data: object) => {
   }
 };
 
-export const updateJobAPI = async (id: string, data: boolean) => {
+export const updateJobAPI = async (id: string, data: JobPayload) => {
   try {
-    const response = await api.patch(`/jobs/${id}`, { isApplied: data });
+    const response = await api.patch(`/jobs/${id}`, { ...data });
     return response.data;
   } catch (error) {
     throw error;

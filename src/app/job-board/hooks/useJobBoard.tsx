@@ -1,12 +1,12 @@
 "use client";
 import { create } from "zustand";
-import { JobDetails } from "../types/JobDetails";
+import { JobDetails, JobPayload } from "../types/JobDetails";
 import { getJoblistAPI, updateJobAPI } from "@/app/api/JobBoardApi";
 
 interface JobStore {
   jobs: JobDetails[];
   getJobs: (params?: object) => Promise<void>;
-  updateJob: (id: string, data: boolean) => Promise<void>;
+  updateJob: (id: string, data: JobPayload) => Promise<void>;
 }
 
 export const useJobBoard = create<JobStore>((set) => ({
@@ -22,7 +22,7 @@ export const useJobBoard = create<JobStore>((set) => ({
     set((state) => ({
       jobs: state.jobs.map((job) => {
         if (job?.value === id) {
-          return { ...job, isApplied: !job?.isApplied };
+          return { ...job, ...data };
         } else {
           return job;
         }
@@ -30,5 +30,3 @@ export const useJobBoard = create<JobStore>((set) => ({
     }));
   },
 }));
-
-

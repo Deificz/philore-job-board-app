@@ -12,7 +12,9 @@
       ],
       "salary": 45000,
       "location": "Pasig City",
-      "isApplied": false
+      "isApplied": true,
+      "applied_at": "2026-01-17",
+      "is_applied": true
     },
     {
       "id": "backend-dev",
@@ -26,7 +28,7 @@
       ],
       "salary": 48000,
       "location": "Makati City",
-      "isApplied": true
+      "isApplied": false
     },
     {
       "id": "fullstack-dev",
@@ -40,7 +42,7 @@
       ],
       "salary": 55000,
       "location": "Quezon City",
-      "isApplied": true
+      "isApplied": false
     },
     {
       "id": "ui-ux-designer",
@@ -54,7 +56,9 @@
       ],
       "salary": 40000,
       "location": "Mandaluyong City",
-      "isApplied": false
+      "isApplied": false,
+      "is_applied": false,
+      "applied_at": ""
     },
     {
       "id": "devops-engineer",
@@ -82,7 +86,7 @@
       ],
       "salary": 50000,
       "location": "Pasig City",
-      "isApplied": true
+      "isApplied": false
     },
     {
       "id": "data-analyst",
@@ -96,7 +100,8 @@
       ],
       "salary": 45000,
       "location": "Makati City",
-      "isApplied": true
+      "isApplied": true,
+      "applied_at": "2025/01/17"
     },
     {
       "id": "project-manager",
@@ -138,7 +143,8 @@
       ],
       "salary": 58000,
       "location": "Taguig City",
-      "isApplied": true
+      "isApplied": true,
+      "applied_at": "2025/01/17"
     }
   ]
 }

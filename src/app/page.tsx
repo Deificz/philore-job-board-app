@@ -1,4 +1,4 @@
-import JobCard from "@/components/page-components/home/JobCard";
+import JobCard from "@/components/page-components/job-board/JobCard";
 import { Label } from "@/components/ui/label";
 import Image from "next/image";
 
