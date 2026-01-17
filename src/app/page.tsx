@@ -1,65 +1,119 @@
+import JobCard from "@/components/page-components/home/JobCard";
+import { Label } from "@/components/ui/label";
 import Image from "next/image";
 
 export default function Home() {
+  const jobs = [
+    {
+      label: "Frontend Developer",
+      value: "frontend-dev",
+      description:
+        "As a Frontend Developer, you will craft and maintain responsive, high-performance web interfaces. You will collaborate closely with designers and backend developers to ensure seamless user experiences, optimize website speed, and implement cutting-edge technologies like React and Tailwind. Your work directly impacts how users interact with applications, making every interaction smooth and visually appealing.",
+      skills: ["React", "Tailwind", "JavaScript"],
+      salary: 45000,
+      location: "Pasig City",
+      isApplied: true,
+    },
+    {
+      label: "Backend Developer",
+      value: "backend-dev",
+      description:
+        "As a Backend Developer, you are responsible for building robust server-side logic, managing databases, and creating APIs that power dynamic applications. You will work on optimizing performance, ensuring security, and integrating various systems. Collaboration with frontend teams is crucial to provide seamless, reliable, and scalable solutions that handle large volumes of data efficiently.",
+      skills: ["Node.js", "Express", "MongoDB"],
+      salary: 48000,
+      location: "Makati City",
+      isApplied: false,
+    },
+    {
+      label: "Fullstack Developer",
+      value: "fullstack-dev",
+      description:
+        "A Fullstack Developer plays a pivotal role in bridging frontend and backend development. You will design, implement, and maintain complete applications, ensuring functionality, performance, and a seamless user experience. From crafting intuitive interfaces to building secure, efficient server-side logic, your expertise enables the delivery of end-to-end solutions for complex projects.",
+      skills: ["React", "Node.js", "TypeScript"],
+      salary: 55000,
+      location: "Quezon City",
+      isApplied: true,
+    },
+    {
+      label: "UI/UX Designer",
+      value: "ui-ux-designer",
+      description:
+        "As a UI/UX Designer, you will research, design, and refine user interfaces to enhance usability and satisfaction. Your work involves creating wireframes, prototypes, and design systems while collaborating with developers to ensure the design vision is realized. By understanding user behavior and incorporating feedback, you will craft interfaces that are both visually appealing and intuitively functional.",
+      skills: ["Figma", "Adobe XD", "Sketch"],
+      salary: 40000,
+      location: "Mandaluyong City",
+      isApplied: false,
+    },
+    {
+      label: "DevOps Engineer",
+      value: "devops-engineer",
+      description:
+        "As a DevOps Engineer, you will oversee deployment pipelines, automate infrastructure, and ensure system reliability. Your responsibilities include monitoring performance, implementing CI/CD processes, and collaborating with development teams to improve code delivery efficiency. By bridging development and operations, you help organizations maintain scalable, secure, and highly available systems.",
+      skills: ["Docker", "Kubernetes", "AWS"],
+      salary: 60000,
+      location: "Taguig City",
+      isApplied: false,
+    },
+    {
+      label: "Mobile Developer",
+      value: "mobile-dev",
+      description:
+        "A Mobile Developer builds and maintains applications for iOS and Android platforms. You will work with frameworks like React Native and Flutter to create responsive, performant apps that provide an excellent user experience. From integrating APIs to optimizing performance and ensuring compatibility across devices, your work ensures mobile users have a seamless and engaging experience.",
+      skills: ["React Native", "Flutter", "Swift"],
+      salary: 50000,
+      location: "Pasig City",
+      isApplied: true,
+    },
+    {
+      label: "Data Analyst",
+      value: "data-analyst",
+      description:
+        "As a Data Analyst, you will examine complex datasets to uncover insights that drive business decisions. Your work involves cleaning, analyzing, and visualizing data using tools like Python, SQL, and Power BI. By identifying trends, patterns, and anomalies, you provide actionable recommendations to improve operations, optimize strategies, and support organizational growth.",
+      skills: ["Python", "SQL", "Power BI"],
+      salary: 45000,
+      location: "Makati City",
+      isApplied: true,
+    },
+    {
+      label: "Project Manager",
+      value: "project-manager",
+      description:
+        "A Project Manager coordinates teams, resources, and timelines to ensure projects are completed successfully. You will plan, execute, and monitor projects while mitigating risks and resolving challenges. Effective communication with stakeholders, scheduling, and resource management are key to delivering projects on time, within scope, and with high quality.",
+      skills: ["Agile", "Scrum", "Jira"],
+      salary: 52000,
+      location: "Quezon City",
+      isApplied: false,
+    },
+    {
+      label: "QA Engineer",
+      value: "qa-engineer",
+      description:
+        "As a QA Engineer, your role is to ensure software quality and reliability through rigorous testing. You will design test plans, automate test cases, and identify bugs or performance issues before release. Collaborating with developers and stakeholders, you help deliver stable and high-quality products that meet user expectations and maintain system integrity.",
+      skills: ["Selenium", "Jest", "Cypress"],
+      salary: 43000,
+      location: "Mandaluyong City",
+      isApplied: false,
+    },
+    {
+      label: "Cybersecurity Specialist",
+      value: "cybersecurity-specialist",
+      description:
+        "A Cybersecurity Specialist safeguards an organization’s systems, networks, and data from threats. You will monitor for vulnerabilities, conduct penetration testing, and implement security protocols. Staying ahead of emerging cyber threats, you ensure systems are protected against attacks, data breaches, and unauthorized access, contributing to organizational resilience and trust.",
+      skills: ["Network Security", "Penetration Testing", "Linux"],
+      salary: 58000,
+      location: "Taguig City",
+      isApplied: true,
+    },
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <Label className="text-3xl justify-center ">Job Board</Label>
+      <div className="md:flex md:justify-evenly flex-wrap">
+        {jobs?.map((job) => (
+          <JobCard key={job?.value} details={job} />
+        ))}
+      </div>
+    </>
   );
 }
