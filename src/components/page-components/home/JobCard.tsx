@@ -1,23 +1,16 @@
+import { JobDetails } from "@/app/job-board/types/JobDetails";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import React from "react";
 
-type JobDetails = {
-  label: string;
-  value: string;
-  description: string;
-  skills: string[];
-  salary: number;
-  location: string;
-  isApplied: boolean;
-};
 type Props = {
   details: JobDetails;
+  updateJob: (id: string, data: boolean) => {};
 };
 
-export default function JobCard({ details }: Props) {
+export default function JobCard({ details, updateJob }: Props) {
   const { label, value, description, skills, salary, location, isApplied } =
     details;
   return (
@@ -38,14 +31,14 @@ export default function JobCard({ details }: Props) {
         ))}
       </div>
       <Button
-        disabled={isApplied}
+        onClick={() => updateJob(value, !isApplied)}
         className={
           isApplied
-            ? "w-50 self-end rounded-2xl"
+            ? "w-50 self-end rounded-2xl bg-red-500 cursor-pointer hover:bg-red-600"
             : "w-50 cursor-pointer bg-white border-2 border-orange-400 text-black hover:bg-amber-400 hover:text-white self-end rounded-2xl"
         }
       >
-        {isApplied ? "Applied" : "Apply"}
+        {isApplied ? "Withdraw" : "Apply"}
       </Button>
     </div>
   );
