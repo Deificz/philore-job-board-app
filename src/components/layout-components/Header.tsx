@@ -3,11 +3,12 @@ import React, { ReactNode } from "react";
 import { Row } from "../ui/row";
 import Image from "next/image";
 import { Bookmark, BriefcaseBusiness, CircleUser } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const iconClassName =
   "text-orange-400 p-2 mr-5 bg-transparent hover:text-white hover:bg-orange-500 transition-all duration-300 cursor-pointer rounded-full";
 
+const active = "p-2 mr-5 text-white bg-orange-500 cursor-pointer rounded-full";
 type Props = {
   router: any;
 };
@@ -38,21 +39,22 @@ const NavButtons = ({ router }: Props) => {
   const handleNavigation = (route: string) => {
     router.push(route);
   };
-
+  const pathname = usePathname();
+console.log(pathname)
   return (
-    <Row className="flex justify-center items-center">
+    <Row className="flex justify-center items-center md:pr-20">
       <BriefcaseBusiness
-        className={iconClassName}
+        className={pathname == "/job-board" ? active : iconClassName}
         size={50}
         onClick={() => handleNavigation("/job-board")}
       />
       <Bookmark
-        className={iconClassName}
+        className={pathname == "/applied-jobs" ? active : iconClassName}
         size={50}
         onClick={() => handleNavigation("/applied-jobs")}
       />
       <CircleUser
-        className={iconClassName}
+        className={pathname == "/my-profile" ? active : iconClassName}
         size={50}
         onClick={() => handleNavigation("/my-profile")}
       />

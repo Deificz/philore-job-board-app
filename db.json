@@ -28,7 +28,9 @@
       ],
       "salary": 48000,
       "location": "Makati City",
-      "isApplied": false
+      "isApplied": false,
+      "is_applied": false,
+      "applied_at": ""
     },
     {
       "id": "fullstack-dev",
