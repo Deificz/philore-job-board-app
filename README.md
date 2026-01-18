@@ -12,6 +12,14 @@ A sample job board that mocks online job listing where you can apply, track, and
 - Tailwind ( CSS Framwork )
 - json-server ( For mock REST API )
 
+**Struggles**
+
+Setting up the needed components and custom hooks took alot of time but development will be much easier to scale in the future.
+
+**Future Improvements**
+
+- Skeleton Loading for UI Experience
+
 **Required Packages**
 
 v24.6.0 or up - node version
@@ -21,4 +29,15 @@ v24.6.0 or up - node version
 1. Run **npm start**
 2. Run **npm run json-server**
 3. Open web-app on **http://localhost:300/** in your browser
+
+**Desktop Demo**
+
+https://github.com/user-attachments/assets/24e706cb-1257-4865-a6c4-7333a2653c74
+
+**Mobile Demo**
+
+https://github.com/user-attachments/assets/7c59061d-9777-467c-a6d9-18f6535c14ee
+
+
+
 
