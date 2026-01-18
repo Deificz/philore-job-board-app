@@ -11,7 +11,7 @@ import { JobDetails, JobPayload } from "../job-board/types/JobDetails";
 import { useNotif } from "@/contexts/NotifProvider";
 import { Row } from "@/components/ui/row";
 
-export default function Home() {
+export default function AppliedJobs() {
   const [appliedJobs, setAppliedJobs] = useState<JobDetails[]>([]);
   const { setLoading } = useLoader();
   const { jobs, getJobs, updateJob } = useJobBoard();
@@ -58,7 +58,7 @@ export default function Home() {
 
   return (
     <>
-      <Label className="text-3xl justify-center mb-5">My Applications 💼</Label>
+      <Label className="text-3xl justify-center my-7">My Applications 💼</Label>
       {appliedJobs?.length > 0 ? (
         appliedJobs?.map((job) => (
           <AppliedJobsCard

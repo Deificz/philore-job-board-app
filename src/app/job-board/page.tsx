@@ -9,9 +9,11 @@ import { useEffect } from "react";
 import { delay } from "@/lib/utils";
 import { useNotif } from "@/contexts/NotifProvider";
 import { JobPayload } from "./types/JobDetails";
+import { useMyProfile } from "../my-profile/hooks/useMyProfile";
 
-export default function Home() {
+export default function JobBoard() {
   const { jobs, getJobs, updateJob } = useJobBoard();
+  const { user, getProfile } = useMyProfile();
   const { setLoading } = useLoader();
   const { open } = useNotif();
   const getJobList = async () => {
@@ -42,12 +44,22 @@ export default function Home() {
     }
   };
 
+  const handleGetProfile = async () => {
+    try {
+      await getProfile(1);
+    } catch {
+      console.error();
+    } finally {
+    }
+  };
+
   useEffect(() => {
+    handleGetProfile();
     getJobList();
   }, []);
   return (
     <>
-      <Label className="text-3xl justify-center">Job Board 📋</Label>
+      <Label className="text-3xl justify-center my-7">Job Board 📋</Label>
       <div className="md:flex md:justify-evenly flex-wrap">
         {jobs?.map((job) => (
           <JobCard key={job?.value} details={job} updateJob={handleUpdateJob} />

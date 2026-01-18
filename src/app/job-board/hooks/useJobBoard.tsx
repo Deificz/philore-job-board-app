@@ -1,7 +1,8 @@
 "use client";
 import { create } from "zustand";
 import { JobDetails, JobPayload } from "../types/JobDetails";
-import { getJoblistAPI, updateJobAPI } from "@/app/api/JobBoardApi";
+import { getJoblistAPI, updateJobAPI } from "@/api/JobBoardApi";
+
 
 interface JobStore {
   jobs: JobDetails[];

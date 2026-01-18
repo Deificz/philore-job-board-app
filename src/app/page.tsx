@@ -14,8 +14,12 @@ import { Label } from "@/components/ui/label";
 import { Alfa_Slab_One, Inter, Merriweather_Sans } from "next/font/google";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { TypeAnimation } from "react-type-animation";
+import { useMyProfile } from "./my-profile/hooks/useMyProfile";
+import { useLoader } from "@/contexts/LoaderProvider";
+import { useNotif } from "@/contexts/NotifProvider";
+import { delay } from "@/lib/utils";
 
 export const inter = Merriweather_Sans({
   subsets: ["latin"],
@@ -52,7 +56,7 @@ export default function Home() {
           className="cursor-pointer bg-amber-500 hover:bg-white border-amber-500 border-2 hover:border-amber-500 hover:text-amber-500 md:text-xl md:p-5"
           onClick={() => router.push("/job-board")}
         >
-          Get Started
+          Job Seek
         </Button>
       </Col>
     </>

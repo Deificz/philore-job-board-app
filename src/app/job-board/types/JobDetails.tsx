@@ -1,4 +1,4 @@
-export type JobDetails = {\
+export type JobDetails = {
   label: string;
   value: string;
   description: string;

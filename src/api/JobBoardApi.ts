@@ -1,6 +1,5 @@
+import { JobPayload } from "@/app/job-board/types/JobDetails";
 import { api } from "@/lib/utils";
-import { JobPayload } from "../job-board/types/JobDetails";
-
 export const getJoblistAPI = async (data: object) => {
   try {
     const response = await api.get("/jobs", { params: data });

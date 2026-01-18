@@ -40,7 +40,6 @@ const NavButtons = ({ router }: Props) => {
     router.push(route);
   };
   const pathname = usePathname();
-console.log(pathname)
   return (
     <Row className="flex justify-center items-center md:pr-20">
       <BriefcaseBusiness
