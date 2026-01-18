@@ -50,7 +50,7 @@ export default function JobCard({ user, details, updateJob }: Props) {
             <div className="flex flex-col  items-center">
               <Progress className="mb-2 [&>div]:bg-amber-500" value={matchPercent} />
               <Label className="text-gray-500 italic">
-                You are <span className="text-amber-600">{matchPercent}%</span>{" "}
+                You're <span className="text-amber-600">{matchPercent}%</span>{" "}
                 <span className="text-green-500">MATCH</span>
               </Label>
             </div>
