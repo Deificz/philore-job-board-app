@@ -2,13 +2,6 @@
 import JobCard from "@/components/page-components/job-board/JobCard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import { Col } from "@/components/ui/col";
 import { Label } from "@/components/ui/label";
 import { Alfa_Slab_One, Inter, Merriweather_Sans } from "next/font/google";
