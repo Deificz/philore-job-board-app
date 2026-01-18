@@ -26,9 +26,10 @@ v24.6.0 or up - node version
 
 **Initialization Commands**
 
-1. Run **npm start**
-2. Run **npm run json-server**
-3. Open web-app on **http://localhost:300/** in your browser
+1. Run **npm install**
+2. Run **npm start**
+3. Run **npm run json-server**
+4. Open web-app on **http://localhost:300/** in your browser
 
 **Desktop Demo**
 
@@ -37,6 +38,7 @@ https://github.com/user-attachments/assets/24e706cb-1257-4865-a6c4-7333a2653c74
 **Mobile Demo**
 
 https://github.com/user-attachments/assets/7c59061d-9777-467c-a6d9-18f6535c14ee
+
 
 
 
