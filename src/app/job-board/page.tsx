@@ -62,7 +62,7 @@ export default function JobBoard() {
       <Label className="text-3xl justify-center my-7">Job Board 📋</Label>
       <div className="md:flex md:justify-evenly flex-wrap">
         {jobs?.map((job) => (
-          <JobCard key={job?.value} details={job} updateJob={handleUpdateJob} />
+          <JobCard key={job?.value} user={user} details={job} updateJob={handleUpdateJob} />
         ))}
       </div>
     </>

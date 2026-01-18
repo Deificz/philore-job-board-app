@@ -1,16 +1,18 @@
 import { JobDetails, JobPayload } from "@/app/job-board/types/JobDetails";
+import { ProfileDetails } from "@/app/job-board/types/ProfileDetails";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import React from "react";
+import { Progress } from "@/components/ui/progress";
+import { useEffect, useState } from "react";
 
 type Props = {
+  user: Partial<ProfileDetails>;
   details: JobDetails;
   updateJob: (id: string, data: JobPayload) => {};
 };
 
-export default function JobCard({ details, updateJob }: Props) {
+export default function JobCard({ user, details, updateJob }: Props) {
   const {
     label,
     value,
@@ -21,9 +23,42 @@ export default function JobCard({ details, updateJob }: Props) {
     is_applied,
     applied_at,
   } = details;
+
+  const [matchPercent, setMatchPercent] = useState<number>(0);
+
+  const jobMatch = () => {
+    let matchCount = 0;
+    skills?.forEach((skill) => {
+      if (user?.skills?.includes(skill)) {
+        matchCount += 1;
+      }
+    });
+    const percent = (matchCount / skills?.length) * 100;
+    setMatchPercent(Math.round(percent));
+  };
+
+  useEffect(() => {
+    jobMatch();
+  }, [details]);
+
   return (
     <div className="flex flex-col h-120 md:h-100 border-3 border-amber-500 rounded-4xl m-5 inset-shadow-sm inset-shadow-amber-300 p-5 md:w-200">
-      <Label className="text-2xl mb-5 md:text-4xl">{label}</Label>
+      <Label className="text-2xl mb-5 md:text-4xl flex justify-between">
+        <span>{label}</span>
+        {matchPercent > 0 ? (
+          <>
+            <div className="flex flex-col  items-center">
+              <Progress className="mb-2 [&>div]:bg-amber-500" value={matchPercent} />
+              <Label className="text-gray-500 italic">
+                You are <span className="text-amber-600">{matchPercent}%</span>{" "}
+                <span className="text-green-500">MATCH</span>
+              </Label>
+            </div>
+          </>
+        ) : (
+          ""
+        )}
+      </Label>
       <div style={{ fontSize: "15px" }} className="flex mb-3">
         {location}
       </div>

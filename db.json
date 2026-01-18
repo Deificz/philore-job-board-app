@@ -45,8 +45,8 @@
       "salary": 55000,
       "location": "Quezon City",
       "isApplied": false,
-      "is_applied": true,
-      "applied_at": "2026-01-18"
+      "is_applied": false,
+      "applied_at": ""
     },
     {
       "id": "ui-ux-designer",

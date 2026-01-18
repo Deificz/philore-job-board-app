@@ -18,7 +18,7 @@ import { ProfileDetails } from "../job-board/types/ProfileDetails";
 type Props = {};
 
 export default function MyProfile({}: Props) {
-  const form = useForm();
+  const form = useForm<ProfileDetails>();
   const { handleSubmit, reset } = form;
   const { setLoading } = useLoader();
   const { open } = useNotif();
